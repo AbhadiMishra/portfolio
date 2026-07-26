@@ -1,0 +1,199 @@
+@import "tailwindcss";
+
+/* 
+   Configure Tailwind v4 dark variant to activate ONLY when class ".dark" is present on html/body.
+   This prevents OS system dark mode (prefers-color-scheme) from overriding Light Mode in the app!
+*/
+@variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root {
+    --bg-primary: #090d16;
+    --bg-secondary: #0f172a;
+    --bg-card: rgba(15, 23, 42, 0.85);
+    --border-color: rgba(255, 255, 255, 0.12);
+    --border-color-hover: rgba(59, 130, 246, 0.5);
+    
+    --text-primary: #f8fafc;
+    --text-secondary: #e2e8f0;
+    --text-muted: #94a3b8;
+
+    --btn-glass: rgba(255, 255, 255, 0.05);
+    --btn-glass-border: rgba(255, 255, 255, 0.12);
+  }
+
+  .light, html.light {
+    --bg-primary: #f8fafc;
+    --bg-secondary: #ffffff;
+    --bg-card: #ffffff;
+    --border-color: rgba(15, 23, 42, 0.18);
+    --border-color-hover: rgba(37, 99, 235, 0.8);
+    
+    --text-primary: #020617;
+    --text-secondary: #0f172a;
+    --text-muted: #1e293b;
+
+    --btn-glass: #ffffff;
+    --btn-glass-border: rgba(15, 23, 42, 0.18);
+  }
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Glassmorphism & Card Primitives */
+.glass-panel {
+  background: var(--bg-card);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.2);
+}
+
+html.light .glass-panel,
+.light .glass-panel {
+  background: #ffffff !important;
+  border: 1px solid rgba(15, 23, 42, 0.18) !important;
+  box-shadow: 0 10px 30px -5px rgba(15, 23, 42, 0.08) !important;
+  color: #020617 !important;
+}
+
+.glass-card {
+  background: var(--btn-glass);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--btn-glass-border);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+html.light .glass-card,
+.light .glass-card {
+  background: #ffffff !important;
+  border: 1px solid rgba(15, 23, 42, 0.18) !important;
+  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.06) !important;
+  color: #020617 !important;
+}
+
+.glass-card:hover {
+  border-color: var(--border-color-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px -10px rgba(37, 99, 235, 0.25);
+}
+
+/* Gradient Text - GitHub Universe Neon in Dark Mode, Deep Crisp Vivid Blues/Violets in Light Mode */
+.gradient-text {
+  background: linear-gradient(135deg, #60a5fa 0%, #a78bfa 40%, #38bdf8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  font-weight: 900;
+}
+
+html.light .gradient-text,
+.light .gradient-text {
+  background: linear-gradient(135deg, #1d4ed8 0%, #6d28d9 45%, #0284c7 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+}
+
+/* ==========================================================================
+   STRICT LIGHT MODE COLOR OVERRIDES: PREVENT FAINT TEXT ON WHITE BACKGROUNDS
+   ========================================================================== */
+
+html.light,
+html.light body,
+.light,
+.light body {
+  background-color: #f8fafc !important;
+  color: #020617 !important;
+}
+
+html.light h1, .light h1,
+html.light h2, .light h2,
+html.light h3, .light h3,
+html.light h4, .light h4,
+html.light h5, .light h5,
+html.light h6, .light h6 {
+  color: #020617 !important;
+}
+
+html.light p, .light p,
+html.light span, .light span,
+html.light div, .light div,
+html.light li, .light li,
+html.light ul, .light ul,
+html.light ol, .light ol,
+html.light label, .light label,
+html.light input, .light input,
+html.light textarea, .light textarea {
+  color: #020617;
+}
+
+/* Override faint text utility classes in Light Mode */
+html.light .text-white, .light .text-white,
+html.light .text-slate-50, .light .text-slate-50,
+html.light .text-slate-100, .light .text-slate-100,
+html.light .text-slate-200, .light .text-slate-200,
+html.light .text-slate-300, .light .text-slate-300,
+html.light .text-slate-400, .light .text-slate-400,
+html.light .text-slate-500, .light .text-slate-500,
+html.light .text-gray-50, .light .text-gray-50,
+html.light .text-gray-100, .light .text-gray-100,
+html.light .text-gray-200, .light .text-gray-200,
+html.light .text-gray-300, .light .text-gray-300,
+html.light .text-gray-400, .light .text-gray-400,
+html.light .text-gray-500, .light .text-gray-500 {
+  color: #020617 !important;
+}
+
+/* Accent Colors In Light Mode */
+html.light .text-blue-300, .light .text-blue-300,
+html.light .text-blue-400, .light .text-blue-400 {
+  color: #1d4ed8 !important;
+}
+
+html.light .text-purple-300, .light .text-purple-300,
+html.light .text-purple-400, .light .text-purple-400 {
+  color: #6d28d9 !important;
+}
+
+html.light .text-cyan-300, .light .text-cyan-300,
+html.light .text-cyan-400, .light .text-cyan-400 {
+  color: #0284c7 !important;
+}
+
+html.light .text-emerald-300, .light .text-emerald-300,
+html.light .text-emerald-400, .light .text-emerald-400 {
+  color: #047857 !important;
+}
+
+/* Filled Blue / Gradient Buttons Preserve White Text */
+html.light .bg-blue-600, .light .bg-blue-600,
+html.light .bg-blue-600 *, .light .bg-blue-600 *,
+html.light .bg-gradient-to-r, .light .bg-gradient-to-r,
+html.light .bg-gradient-to-r *, .light .bg-gradient-to-r * {
+  color: #ffffff !important;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(100, 116, 139, 0.4);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(100, 116, 139, 0.6);
+}
