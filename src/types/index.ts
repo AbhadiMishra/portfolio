@@ -6,7 +6,10 @@ export type ProjectCategory =
     | "Data Science"
     | "React"
     | "Backend"
-    | "Frontend";
+    | "Frontend"
+    | "NLP"
+    | "Data Analysis"
+    | "Full Stack";
 
 export interface Project {
     id: string;
