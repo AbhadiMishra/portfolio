@@ -1,237 +1,276 @@
-import type { Project } from '../types';
+import type { Project } from "../types";
 
 export const projectsData: Project[] = [
-  {
-    id: "agentic-ai-automation",
-    title: "Agentic AI Workflow & Multi-Agent Orchestrator",
-    slug: "agentic-ai-automation",
-    shortDescription: "Autonomous multi-agent orchestration platform integrating n8n, Relay, and Relevance AI for intelligent workflow automation and LLM task execution.",
-    category: ["AI", "Python"],
-    featured: true,
-    problemSolved: "Manual operations across enterprise SaaS platforms create bottlenecks in customer data processing, lead scoring, and automated decision-making. Traditional fixed scripts lack adaptiveness to unstructured inputs.",
-    architectureOverview: "Constructed an event-driven agentic framework that connects webhooks to intelligent LLM-powered decision nodes. Integrates n8n execution pipelines, Relay triggers, and custom Python API handlers for context-aware task delegation.",
-    features: [
-      "Dynamic agent task assignment based on input classification",
-      "Low-code/no-code integration bridges with n8n and Relay",
-      "Automated prompt routing and context memory persistence",
-      "Real-time execution monitoring and retry queue handling",
-      "Custom Python webhook endpoints for complex data transformations"
-    ],
-    technologies: ["Python", "Agentic AI", "n8n", "Relay", "Relevance AI", "REST APIs", "LLM Prompt Engineering"],
-    githubUrl: "https://github.com/AbhadiMishra",
-    liveUrl: "https://abhadimishra.github.io/abhinavmishra.github.io/",
-    overview: "Built as part of advanced AI research and industry training, this Agentic AI platform orchestrates complex multi-step workflows autonomously. It transforms incoming raw data events into structured, actionable business decisions.",
-    workflow: [
-      "1. Webhook trigger receives unstructured JSON / text payload",
-      "2. Router agent categorizes priority and intent via LLM classification",
-      "3. Specialist sub-agents process sub-tasks concurrently (extraction, API calls, response synthesis)",
-      "4. Final output is formatted, logged, and dispatched to destination endpoints"
-    ],
-    challenges: [
-      "Managing agent state drift during multi-turn asynchronous workflows",
-      "Handling API rate limits and non-deterministic response formats from foundational models"
-    ],
-    solutions: [
-      "Implemented strict JSON schema enforcement on model outputs",
-      "Built an exponential backoff retry system with fallback agent paths"
-    ],
-    lessonsLearned: [
-      "Deterministic guardrails are crucial when orchestrating non-deterministic AI agents in production",
-      "Modular workflow decomposition improves debugging and agent task accuracy"
-    ],
-    futureImprovements: [
-      "Integrate vector database (Pinecone/Qdrant) for long-term semantic agent memory",
-      "Build a custom visual execution canvas using React Flow"
-    ]
-  },
-  {
-    id: "mern-admin-portal",
-    title: "Enterprise MERN Store & Product Admin Portal",
-    slug: "mern-admin-portal",
-    shortDescription: "Production-grade MERN stack administration suite featuring catalog management, store metrics analytics, role-based access, and real-time inventory updates.",
-    category: ["MERN"],
-    featured: true,
-    problemSolved: "Growing web portals struggle with inefficient store inventory management, fragmented product analytics, and slow back-office operations.",
-    architectureOverview: "Decoupled MERN stack architecture utilizing React 19 on Vite for ultra-fast client render cycles, backed by Node.js/Express REST APIs connected to MongoDB Atlas with indexed query optimization.",
-    features: [
-      "Complete Store & Product CRUD management with image asset mapping",
-      "Real-time inventory level indicators & out-of-stock threshold alerts",
-      "MongoDB aggregation pipeline for revenue & sales metric summaries",
-      "Secure JWT authentication with protected admin route middleware",
-      "Responsive glassmorphism dashboard UI tuned for desktop and mobile"
-    ],
-    technologies: ["React 19", "Node.js", "Express.js", "MongoDB", "MongoDB Atlas", "Tailwind CSS", "TypeScript", "JWT"],
-    githubUrl: "https://github.com/AbhadiMishra",
-    liveUrl: "https://abhadimishra.github.io/abhinavmishra.github.io/",
-    overview: "Developed during engineering work at StartApps System Pvt Ltd, this admin portal provides store managers with an enterprise-ready dashboard to control store listings, monitor product metrics, and streamline administrative workflows.",
-    workflow: [
-      "1. Administrator authenticates via JWT-backed login interface",
-      "2. React state fetches store data asynchronously from Express API endpoints",
-      "3. Interactive tables allow searching, sorting, filtering, and inline product edits",
-      "4. Database mutations update MongoDB Atlas atomically with instant UI reactivity"
-    ],
-    challenges: [
-      "Optimizing complex product filtering across large MongoDB collections without performance degradation",
-      "Preventing unauthorized API requests to administrative endpoints"
-    ],
-    solutions: [
-      "Created compound indexes on frequently queried fields (`category`, `price`, `status`) in MongoDB",
-      "Enforced multi-layered Express middleware verifying JWT signatures and user roles"
-    ],
-    lessonsLearned: [
-      "Proper database indexing dramatically reduces query response times in MERN applications",
-      "Separating client state from server state keeps the UI clean and responsive"
-    ],
-    futureImprovements: [
-      "Add WebSocket support for live multi-user concurrent inventory editing",
-      "Implement automated CSV/Excel inventory import and export capabilities"
-    ]
-  },
-  {
-    id: "whatsapp-chat-analytics",
-    title: "WhatsApp Chat Sentiment & NLP Analytics Platform",
-    slug: "whatsapp-chat-analytics",
-    shortDescription: "End-to-end NLP application for parsing textual WhatsApp chat exports, extracting linguistic metrics, and performing sentiment classification deployed on Cloud Streamlit.",
-    category: ["Python", "AI", "Data Science"],
-    featured: true,
-    problemSolved: "Unstructured conversational chat data contains valuable communication insights, sentiment trends, and behavioral patterns that are difficult to analyze manually.",
-    architectureOverview: "Python-native data science architecture. Uses regex preprocessing pipelines to parse raw chat exports into structured Pandas DataFrames, followed by NLP feature extraction, VADER/TextBlob sentiment modeling, and interactive Streamlit rendering.",
-    features: [
-      "Regex-driven multilingual chat log parser (timestamps, users, system notifications)",
-      "Sentiment classification modeling across daily, weekly, and monthly timeline distributions",
-      "Word cloud generation, stop-word filtering, and top emoji usage frequency analysis",
-      "Activity heatmap breakdown showing peak conversation hours and response velocity",
-      "Interactive Streamlit cloud web deployment with drag-and-drop file uploaders"
-    ],
-    technologies: ["Python", "Pandas", "Streamlit", "Scikit-learn", "NLTK", "Matplotlib", "Seaborn", "Regex"],
-    githubUrl: "https://github.com/AbhadiMishra/WhatsApp_Chat_Analysis_WebApp",
-    liveUrl: "https://abhadimishra.github.io/abhinavmishra.github.io/",
-    overview: "Featured project engineered to demonstrate practical Applied NLP and Data Analytics. The app ingests exported WhatsApp text logs and instantly generates high-resolution communication reports.",
-    workflow: [
-      "1. User uploads export `.txt` file into the Streamlit web interface",
-      "2. Python regex engine cleans text, separates datetime tags, and handles multi-line messages",
-      "3. Pandas pipeline constructs structured feature vectors (word counts, media shared, links)",
-      "4. NLP models calculate sentiment polarity scores and render interactive Matplotlib/Seaborn charts"
-    ],
-    challenges: [
-      "Handling different date formatting styles across 12-hour vs 24-hour phone system locales",
-      "Parsing multi-line messages without losing author context"
-    ],
-    solutions: [
-      "Engineered flexible date-time regex patterns matching 10+ standard WhatsApp export formats",
-      "Implemented a buffer accumulation strategy in Pandas for line-break concatenation"
-    ],
-    lessonsLearned: [
-      "Regex robustification is the foundation of high-accuracy text preprocessing pipelines",
-      "Streamlit enables rapid transition from Jupyter research notebooks to production data apps"
-    ],
-    futureImprovements: [
-      "Upgrade model backbone to Transformer-based BERT/RoBERTa for deeper contextual sentiment",
-      "Add comparative analytics mode for multi-group chat benchmark comparisons"
-    ]
-  },
-  {
-    id: "predictive-sales-analysis",
-    title: "Predictive Sales Analytics & Machine Learning Engine",
-    slug: "predictive-sales-analysis",
-    shortDescription: "Machine learning platform leveraging Scikit-learn to perform exploratory data analysis, feature engineering, and predictive revenue forecasting.",
-    category: ["Python", "Machine Learning", "Data Science"],
-    featured: false,
-    problemSolved: "Businesses face revenue volatility due to inaccurate demand forecasting and unoptimized marketing budget allocation across channels.",
-    architectureOverview: "Modular Scikit-learn workflow comprising data cleaning modules, outlier removal, correlation matrix analysis, regression modeling (Linear, Ridge, Random Forest), and evaluation metrics calculation (R², RMSE, MAE).",
-    features: [
-      "Comprehensive Exploratory Data Analysis (EDA) with Seaborn correlation heatmaps",
-      "Feature scaling, categorical encoding, and missing value imputation pipelines",
-      "Multiple model benchmark comparisons (Linear Regression, Decision Trees, Random Forest Regressor)",
-      "Hyperparameter tuning using GridSearchCV for maximum predictive accuracy",
-      "Visual actual vs. predicted revenue plot diagnostics"
-    ],
-    technologies: ["Python", "Scikit-learn", "Pandas", "NumPy", "Matplotlib", "Seaborn", "Jupyter Notebook"],
-    githubUrl: "https://github.com/AbhadiMishra/Sales_Data_Analysis_Prediction",
-    liveUrl: "https://github.com/AbhadiMishra/Sales_Data_Analysis_Prediction",
-    overview: "Built to provide data-backed forecasting for sales operations. The notebook and modular Python scripts demonstrate how machine learning algorithms optimize revenue predictions based on historical feature variables.",
-    workflow: [
-      "1. Raw sales dataset ingested and audited for missing values and skewness",
-      "2. EDA identifies high-correlation predictors and handles outlier distributions",
-      "3. Dataset split into 80/20 train-test sets with standard scaling applied",
-      "4. Models trained, hyper-tuned, evaluated, and exported via Joblib serialization"
-    ],
-    challenges: [
-      "Multicollinearity among marketing expenditure variables skewing linear regression weights",
-      "Overfitting on small training validation splits"
-    ],
-    solutions: [
-      "Applied Ridge/Lasso regularization and Variance Inflation Factor (VIF) filtering",
-      "Utilized 5-fold cross-validation during hyperparameter selection"
-    ],
-    lessonsLearned: [
-      "Feature engineering and domain understanding yield greater accuracy boosts than raw algorithm complexity",
-      "Model evaluation must always look at RMSE alongside R² score"
-    ],
-    futureImprovements: [
-      "Deploy model serving API using FastAPI/Flask wrapped inside a Docker container",
-      "Integrate time-series ARIMA/FBProphet models for temporal seasonality tracking"
-    ]
-  },
-  {
-    id: "weather-trend-prediction",
-    title: "Weather Dataset Trend Analysis & Predictive System",
-    slug: "weather-trend-prediction",
-    shortDescription: "Statistical meteorological trend analyzer utilizing Scikit-learn regression models to predict temperature variance and atmospheric condition trends.",
-    category: ["Python", "Machine Learning", "Data Science"],
-    featured: false,
-    problemSolved: "Weather pattern volatility requires data-driven analysis to spot temperature shifts and atmospheric trends for agricultural and event planning applications.",
-    architectureOverview: "Data modeling pipeline built with Python, Pandas, and Scikit-learn. Cleans meteorological sensor datasets, detects multi-variable trends, and trains predictive models for variable changes.",
-    features: [
-      "Atmospheric variable trend visualization (Humidity vs Temperature vs Pressure)",
-      "Regression model training for multi-variable weather forecasting",
-      "Statistical hypothesis testing and correlation matrix generation",
-      "Outlier detection using IQR (Interquartile Range) method",
-      "Clean visual plots presenting historic vs predicted climate shifts"
-    ],
-    technologies: ["Python", "Scikit-learn", "Pandas", "NumPy", "Matplotlib", "Jupyter"],
-    githubUrl: "https://github.com/AbhadiMishra",
-    liveUrl: "https://github.com/AbhadiMishra",
-    overview: "Analyzes weather trend datasets to find micro-climate patterns and train regression models that predict climate metric variations based on environmental inputs.",
-    workflow: [
-      "1. Ingestion of multi-station weather metrics",
-      "2. Data cleaning, normalization, and outlier removal",
-      "3. Feature selection based on correlation metrics",
-      "4. Scikit-learn model evaluation and validation reporting"
-    ],
-    challenges: ["Handling missing sensor data readings across consecutive timestamps"],
-    solutions: ["Applied forward-fill and spline interpolation techniques for seamless time-series continuity"],
-    lessonsLearned: ["Interpolation techniques prevent data loss while maintaining physical trend accuracy"],
-    futureImprovements: ["Incorporate satellite weather imagery processing using PyTorch CNNs"]
-  },
-  {
-    id: "bs4-web-scraper-sentiment",
-    title: "Automated Web Scraper & Textual Sentiment Classifier",
-    slug: "bs4-web-scraper-sentiment",
-    shortDescription: "Web scraping automation script built with BeautifulSoup4 for extracting article content and evaluating sentiment polarities.",
-    category: ["Python", "Data Science"],
-    featured: false,
-    problemSolved: "Extracting readable article content and sentiment signals from arbitrary news and blog websites is difficult due to noisy DOM layouts.",
-    architectureOverview: "Python scraping pipeline using Requests and BeautifulSoup4 to target main body content, strip HTML tags, and pass clean text into sentiment scoring models.",
-    features: [
-      "DOM extraction targeting `<article>` and `<p>` blocks across dynamic sites",
-      "Text normalization (lowercase, punctuation stripping, stop-word removal)",
-      "Sentiment polarity and subjectivity score calculation",
-      "Exporting structured JSON and CSV dataset reports"
-    ],
-    technologies: ["Python", "BeautifulSoup4", "Requests", "NLTK", "Pandas", "Jupyter"],
-    githubUrl: "https://github.com/AbhadiMishra/Scrap_BS4_Textual_Analysis",
-    liveUrl: "https://github.com/AbhadiMishra/Scrap_BS4_Textual_Analysis",
-    overview: "Designed for web intelligence and market sentiment tracking. Automates article extraction from web sources and generates structured sentiment metrics.",
-    workflow: [
-      "1. Input URL list processed by Requests with custom user-agent headers",
-      "2. BS4 parses DOM hierarchy to isolate headline and primary body text",
-      "3. NLP text cleaning pipeline computes sentiment metrics",
-      "4. Data saved to structured analytical formats for downstream reporting"
-    ],
-    challenges: ["Overcoming anti-bot rate limits and varying HTML class names across target domains"],
-    solutions: ["Configured session retries with randomized request headers and fallback tag selectors"],
-    lessonsLearned: ["Resilient web scraping requires defensive DOM querying and proper header rotation"],
-    futureImprovements: ["Upgrade to Playwright for JavaScript SPA dynamic page rendering"]
-  }
+    {
+        id: "shieldpics",
+        title: "ShieldPics — Secure Image Sharing System",
+        slug: "shieldpics",
+        shortDescription:
+            "Zero-knowledge, privacy-first image storage platform featuring client-side AES-GCM encryption, Google OAuth + JWT authentication, AWS S3 / MinIO storage, and real-time event notifications.",
+        category: ["MERN", "Python"],
+        featured: true,
+        problemSolved:
+            "Centralized cloud storage platforms often store images in plaintext, making user media vulnerable to server data breaches, unauthorized access, and privacy leaks.",
+        architectureOverview:
+            "Designed a multi-service, zero-knowledge architecture where client-side AES-GCM encryption ensures the backend server never accesses plaintext image data. Multi-tier infrastructure deployed with backend on Vercel, frontend on Render, MongoDB Atlas database, and AWS S3 / MinIO for encrypted object storage.",
+        features: [
+            "Zero-knowledge privacy-first storage using client-side AES-GCM encryption",
+            "Google OAuth + JWT authentication with access tokens stored in memory and refresh tokens in HTTP-only cookies to mitigate XSS and session hijacking",
+            "Layered backend architecture (routes, controllers, services, repositories)",
+            "Real-time WebSocket notifications for image lifecycle events",
+            "Cloud-integrated encrypted storage pipeline using AWS S3 and MinIO",
+        ],
+        technologies: [
+            "React",
+            "Node.js",
+            "Express",
+            "MongoDB Atlas",
+            "AWS S3",
+            "MinIO",
+            "AES-GCM",
+            "JWT",
+            "OAuth",
+            "WebSockets",
+        ],
+        githubUrl: "https://github.com/AbhadiMishra/ShieldPics",
+        overview:
+            "Built as a solo project over ~3 months, ShieldPics represents a production-grade secure image distribution platform designed to protect media privacy using modern cryptography and layered cloud architecture.",
+        workflow: [
+            "1. User authenticates via Google OAuth and receives JWT credentials stored securely",
+            "2. Images are encrypted client-side using AES-GCM prior to network transmission",
+            "3. Encrypted binary streams are stored on AWS S3 / MinIO via backend service layer",
+            "4. Real-time sockets notify subscribers of access events while metadata persists on MongoDB Atlas",
+        ],
+        challenges: [
+            "Performing AES-GCM client-side encryption efficiently without freezing browser main thread",
+            "Securing token storage against XSS and session hijacking threats",
+        ],
+        solutions: [
+            "Leveraged Web Crypto API streams for fast, non-blocking browser encryption",
+            "Stored access tokens in memory and refresh tokens inside HTTP-only secure cookies",
+        ],
+        lessonsLearned: [
+            "Zero-knowledge architecture significantly elevates security by removing backend data exposure",
+            "Clean layered backend separation (controller-service-repository) simplifies cloud object storage integration",
+        ],
+        futureImprovements: [
+            "Add ephemeral self-destructing links for time-limited image sharing",
+            "Build native mobile companion app using React Native",
+        ],
+    },
+    {
+        id: "agentic-ai-automation",
+        title: "Agentic AI Automation Workflows",
+        slug: "agentic-ai-automation",
+        shortDescription:
+            "Autonomous multi-agent orchestration workflows built across n8n, Relevance, and Relay, featuring a production Dubai-based logistics pipeline replacing manual coordination.",
+        category: ["AI", "Python"],
+        featured: true,
+        problemSolved:
+            "Manual coordination in supply chain logistics creates communication delays, tracking errors, and high operational costs when handling client booking requests.",
+        architectureOverview:
+            "Event-driven agentic workflow architecture deployed across n8n, Relevance, and Relay platforms. Ingests raw client data, runs automated decision logic via LLM agents, and executes automated pipeline actions.",
+        features: [
+            "Built and deployed multiple agentic AI workflows across n8n, Relevance, and Relay",
+            "Logistics automation pipeline built for a Dubai-based logistics service",
+            "Replaced manual multi-step coordination with automated pipeline triggers",
+            "Real-time webhook routing and automated task delegation",
+            "Intelligent prompt routing and exception fallback handling",
+        ],
+        technologies: [
+            "n8n",
+            "Relevance",
+            "Relay",
+            "Python",
+            "Agentic AI",
+            "LLM Workflows",
+            "Webhooks",
+            "Automation",
+        ],
+        overview:
+            "Production agentic AI automation system engineered for enterprise client operations. Replaced multi-person manual tracking steps for a Dubai logistics client with an automated n8n pipeline.",
+        workflow: [
+            "1. Webhook trigger receives logistics tracking or booking request payload",
+            "2. n8n agent workflow parses intent and validates client parameters",
+            "3. Automated AI agents execute sub-tasks (status queries, notifications, document updates)",
+            "4. Processed response dispatches automatically to client communication channels",
+        ],
+        challenges: [
+            "Handling edge-case exceptions in unstructured client booking messages",
+            "Maintaining execution reliability across multi-platform integrations",
+        ],
+        solutions: [
+            "Configured AI prompt guardrails and structural validation checks",
+            "Engineered automated retry queues and fallback alerts inside n8n",
+        ],
+        lessonsLearned: [
+            "Agentic workflows drastically reduce manual operational overhead for logistics services",
+            "Proper webhook structuring is vital for seamless low-code platform integration",
+        ],
+        futureImprovements: [
+            "Add multi-language translation agents for international client support",
+            "Integrate automated WhatsApp business messaging triggers",
+        ],
+    },
+    {
+        id: "mern-admin-portal",
+        title: "Admin Panel for a Web Portal",
+        slug: "mern-admin-portal",
+        shortDescription:
+            "Production Store & Product Management System engineered for the Admin Panel of a live web portal using React, Node.js, Express, and MongoDB.",
+        category: ["MERN"],
+        featured: true,
+        problemSolved:
+            "E-commerce web portals require centralized, reliable administration tools to manage complex store inventories, product catalogs, and JSON content structures without code redeployment.",
+        architectureOverview:
+            "Decoupled MERN stack portal architecture. Features a responsive React dashboard, RESTful Node.js/Express API services, and MongoDB Atlas database schemas.",
+        features: [
+            "Store and Product Management module for live web portal administration",
+            "JSON-driven content architecture in MongoDB for dynamic UI content modification without code redeployment",
+            "Secure user authentication, role authorization, and document verification services",
+            "REST APIs generating dynamic reports and catalog metrics",
+            "Responsive UI built with React and Tailwind CSS",
+        ],
+        technologies: [
+            "React",
+            "Node.js",
+            "Express.js",
+            "MongoDB",
+            "MongoDB Atlas",
+            "REST APIs",
+            "Tailwind CSS",
+            "JavaScript",
+        ],
+        overview:
+            "Delivered for StartApps System Pvt Ltd, this production MERN admin panel module enables non-technical administrators to manage stores, update products, and alter UI content via API endpoints.",
+        workflow: [
+            "1. Admin logs into secure dashboard session",
+            "2. React state fetches store catalog and JSON UI schemas from Express backend",
+            "3. Product listings are filtered, edited, or updated in real-time",
+            "4. Database updates persist atomically on MongoDB Atlas",
+        ],
+        challenges: [
+            "Allowing non-developers to modify page content without risk of UI breakdown",
+            "Optimizing response time for store catalog queries",
+        ],
+        solutions: [
+            "Engineered a structured JSON content schema in MongoDB with strict validation",
+            "Implemented MongoDB database indexing on store and product IDs",
+        ],
+        lessonsLearned: [
+            "JSON-driven content models eliminate the overhead of code redeployments for routine updates",
+            "Modular admin UI components significantly accelerate back-office operations",
+        ],
+        futureImprovements: [
+            "Add bulk CSV product upload and export tools",
+            "Implement role-based granular permission controls",
+        ],
+    },
+    {
+        id: "whatsapp-chat-analytics",
+        title: "WhatsApp Chat Analysis & Web App",
+        slug: "whatsapp-chat-analytics",
+        shortDescription:
+            "Interactive NLP analytics platform featuring feature engineering, behavioral insight extraction, and an 87% accuracy sentiment classification model trained on 78,000 lines of Hinglish sentences.",
+        category: ["Python", "AI", "Data Science"],
+        featured: true,
+        problemSolved:
+            "Conversational textual exports contain valuable sentiment data and communication trends, but unstructured Hinglish text is difficult to parse using traditional NLP tools.",
+        architectureOverview:
+            "Python NLP data pipeline built with Pandas, NLTK, and Scikit-learn. Cleans raw chat export text, extracts conversational features, trains a sentiment analysis model, and renders an interactive Streamlit application.",
+        features: [
+            "Sentiment analysis ML model with 87% accuracy trained on 78,000 lines of Hinglish sentences",
+            "Linguistic feature engineering & behavioral pattern extraction",
+            "Regex-based raw chat log parser handling multi-line message structures",
+            "Interactive analytics dashboard deployed on Cloud Streamlit",
+            "Visual timeline distributions, heatmap analysis, and word frequency reports",
+        ],
+        technologies: [
+            "Python",
+            "Pandas",
+            "Streamlit",
+            "Scikit-learn",
+            "NLTK",
+            "Matplotlib",
+            "Seaborn",
+            "Regex",
+        ],
+        githubUrl:
+            "https://github.com/AbhadiMishra/WhatsApp_Chat_Analysis_WebApp",
+        overview:
+            "End-to-end Machine Learning & NLP application designed to parse raw WhatsApp text exports and compute deep sentiment insights for Hinglish conversational datasets.",
+        workflow: [
+            "1. Raw chat export `.txt` file uploaded into Streamlit web interface",
+            "2. Python regex pipeline extracts timestamps, authors, and message bodies",
+            "3. NLP model evaluates sentiment polarity across 78k Hinglish trained lines",
+            "4. Interactive Streamlit web app renders communication heatmaps and sentiment charts",
+        ],
+        challenges: [
+            "Handling Hinglish code-mixed grammar variations and non-standard spellings",
+            "Parsing complex timestamp patterns across different device exports",
+        ],
+        solutions: [
+            "Trained sentiment model on a specialized 78,000-line Hinglish dataset",
+            "Built resilient date-time regex parsers covering 10+ locale formats",
+        ],
+        lessonsLearned: [
+            "Training models on domain-specific code-mixed text yields dramatic accuracy gains (87%)",
+            "Streamlit enables rapid deployment of data science models into interactive user tools",
+        ],
+        futureImprovements: [
+            "Incorporate Transformer models (mBERT) for multi-language contextual embeddings",
+            "Add automated PDF analytical report generation",
+        ],
+    },
+    {
+        id: "predictive-sales-analysis",
+        title: "Sales Data Analysis & Prediction",
+        slug: "predictive-sales-analysis",
+        shortDescription:
+            "End-to-end sales prediction pipeline covering exploratory data analysis (EDA), data pre-processing, feature engineering, ML model training, and performance evaluation.",
+        category: ["Python", "Machine Learning", "Data Science"],
+        featured: false,
+        problemSolved:
+            "Businesses face sales unpredictability due to unanalyzed historical data and unoptimized feature selection across marketing and retail channels.",
+        architectureOverview:
+            "Modular machine learning pipeline using Python, Scikit-learn, Pandas, NumPy, Seaborn, and Matplotlib. Preprocesses raw sales metrics, performs EDA, and evaluates regression models.",
+        features: [
+            "End-to-end sales prediction pipeline (preprocessing, EDA, training, evaluation)",
+            "Exploratory Data Analysis with Seaborn correlation matrices & distribution plots",
+            "Feature scaling, missing value imputation, and outlier detection",
+            "Multiple regression algorithm benchmark comparison",
+            "Visual actual vs. predicted revenue diagnostic plots",
+        ],
+        technologies: [
+            "Python",
+            "Scikit-learn",
+            "Pandas",
+            "NumPy",
+            "Seaborn",
+            "Matplotlib",
+            "Jupyter Notebook",
+        ],
+        githubUrl:
+            "https://github.com/AbhadiMishra/Sales_Data_Analysis_Prediction",
+        overview:
+            "Machine learning analytical system built to forecast revenue trends and optimize sales channel decisions using historical feature data.",
+        workflow: [
+            "1. Ingestion and auditing of raw sales dataset",
+            "2. Preprocessing pipeline cleans data, handles missing values, and performs EDA",
+            "3. Model selection and hyperparameter tuning with Scikit-learn",
+            "4. Model evaluation using standard regression metrics (R², RMSE, MAE)",
+        ],
+        challenges: [
+            "Multicollinearity between sales features distorting model weights",
+        ],
+        solutions: [
+            "Applied regularization techniques and feature selection filtering",
+        ],
+        lessonsLearned: [
+            "Thorough EDA and preprocessing are essential for building reliable ML prediction models",
+        ],
+        futureImprovements: [
+            "Deploy predictive API service using FastAPI and Docker",
+        ],
+    },
 ];

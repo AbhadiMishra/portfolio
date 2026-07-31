@@ -1,79 +1,134 @@
-import type { SkillCategory } from '../types';
+import type { SkillCategory } from "../types";
 
 export const skillsData: SkillCategory[] = [
   {
     id: "languages",
-    title: "Programming Languages",
+    title: "Programming",
     skills: [
-      { name: "Python", level: "Expert", description: "Data Analysis, ML Modeling, Scripting, Streamlit Apps" },
-      { name: "JavaScript (ES6+)", level: "Advanced", description: "Modern React Async, Event Loop, REST API Integration" },
-      { name: "TypeScript", level: "Advanced", description: "Strict Typing, Generic Interfaces, Full-Stack Schema Sharing" },
-      { name: "SQL", level: "Advanced", description: "Complex Queries, Aggregations, MySQL, SQL Server" },
-      { name: "C++", level: "Intermediate", description: "Data Structures & Algorithms Fundamentals" },
-      { name: "Java", level: "Intermediate", description: "Object-Oriented Programming & Core Libraries" }
-    ]
-  },
-  {
-    id: "frontend",
-    title: "Frontend Engineering",
-    skills: [
-      { name: "React 19", level: "Advanced", description: "Hooks, Server/Client State, Performance Optimization" },
-      { name: "Next.js", level: "Advanced", description: "App Router, SSR, Static Site Generation" },
-      { name: "Tailwind CSS", level: "Advanced", description: "Responsive Layouts, Glassmorphism, Theme Design" },
-      { name: "Framer Motion", level: "Advanced", description: "Micro-animations, Page Transitions, Scroll Effects" },
-      { name: "Redux / Zustand", level: "Proficient", description: "Global State Management & Action Handlers" },
-      { name: "HTML5 / CSS3", level: "Advanced", description: "Semantic Accessibility, Flexbox, CSS Grid" }
-    ]
-  },
-  {
-    id: "backend",
-    title: "Backend Engineering",
-    skills: [
-      { name: "Node.js", level: "Advanced", description: "Non-blocking I/O, Event Emitters, File Systems" },
-      { name: "Express.js", level: "Advanced", description: "RESTful Routing, Middleware Pipeline, Error Handling" },
-      { name: "REST APIs", level: "Advanced", description: "API Contract Specs, Rate Limiting, JSON Payloads" },
-      { name: "JWT & Security", level: "Proficient", description: "Auth tokens, Helmet headers, CORS policies" }
-    ]
-  },
-  {
-    id: "databases",
-    title: "Database Technologies",
-    skills: [
-      { name: "MongoDB", level: "Advanced", description: "Document Modeling, Indexing, Aggregation Pipelines" },
-      { name: "MongoDB Atlas", level: "Advanced", description: "Cloud Cluster Hosting, Security Rules, Backups" },
-      { name: "MySQL", level: "Proficient", description: "Relational Schemas, Primary Key Indexes, Joins" },
-      { name: "SQL Server", level: "Proficient", description: "Stored Procedures & Queries" }
-    ]
+      {
+        name: "Python",
+        level: "Expert",
+        description: "Data Analysis, ML Pipelines, Agentic AI, Scripting, Django",
+      },
+      {
+        name: "JavaScript (ES6+)",
+        level: "Advanced",
+        description: "Async Logic, ReactJS, NodeJS, NextJS, ExpressJS",
+      },
+      {
+        name: "SQL",
+        level: "Advanced",
+        description: "Complex Queries, Aggregations, MySQL, SQL Server",
+      },
+    ],
   },
   {
     id: "ai-ml",
-    title: "AI & Machine Learning",
+    title: "AI / Machine Learning",
     skills: [
-      { name: "PyTorch", level: "Proficient", description: "Neural Networks, Tensor Computation, Model Training" },
-      { name: "Scikit-Learn", level: "Advanced", description: "Classification, Regression, Clustering, Cross-Validation" },
-      { name: "TensorFlow / Keras", level: "Proficient", description: "Deep Learning Architectures" },
-      { name: "OpenCV", level: "Intermediate", description: "Computer Vision & Image Preprocessing" },
-      { name: "Agentic AI", level: "Advanced", description: "n8n, Relay, Relevance AI, Autonomous Agent Workflows" }
-    ]
+      {
+        name: "PyTorch",
+        level: "Proficient",
+        description: "Neural Networks & Deep Learning Model Architecture",
+      },
+      {
+        name: "Scikit-Learn",
+        level: "Advanced",
+        description: "Classification, Regression, Clustering, EDA, Evaluation",
+      },
+      {
+        name: "TensorFlow & Keras",
+        level: "Proficient",
+        description: "Deep Learning & Model Training Pipelines",
+      },
+      {
+        name: "OpenCV",
+        level: "Intermediate",
+        description: "Computer Vision & Image Processing",
+      },
+      {
+        name: "Agentic AI Workflows",
+        level: "Advanced",
+        description: "n8n, Relevance, Relay, Autonomous Automation Pipelines",
+      },
+    ],
   },
   {
-    id: "datascience",
-    title: "Data Science & Analytics",
+    id: "data-analysis",
+    title: "Data Analysis & Visualization",
     skills: [
-      { name: "Pandas & NumPy", level: "Expert", description: "Data Wrangling, Feature Extraction, Matrix Math" },
-      { name: "EDA & Visualization", level: "Advanced", description: "Matplotlib, Seaborn, Insight Extraction" },
-      { name: "Streamlit", level: "Advanced", description: "Interactive Data Apps & Dashboard Deployment" },
-      { name: "Power BI & Tableau", level: "Proficient", description: "Business Intelligence Dashboards & Metrics" }
-    ]
+      {
+        name: "Pandas & NumPy",
+        level: "Expert",
+        description: "Data Wrangling, Preprocessing, Feature Engineering",
+      },
+      {
+        name: "Power BI & Tableau",
+        level: "Advanced",
+        description: "Business Intelligence Dashboards & Visual Analytics",
+      },
+      {
+        name: "Matplotlib & Seaborn",
+        level: "Advanced",
+        description: "Exploratory Data Analysis & Statistical Plotting",
+      },
+    ],
   },
   {
-    id: "tools-cloud",
-    title: "Developer Tools & Cloud",
+    id: "web-dev",
+    title: "Web Development",
     skills: [
-      { name: "Git & GitHub", level: "Advanced", description: "Version Control, Feature Branching, Pull Requests" },
-      { name: "Jupyter Notebooks", level: "Advanced", description: "Interactive Data Exploration & Experimentation" },
-      { name: "Vercel & Render", level: "Advanced", description: "CI/CD Deployment Pipelines for MERN Stack" },
-      { name: "Postman", level: "Advanced", description: "API Collection Testing, Environment Variables" }
-    ]
-  }
+      {
+        name: "ReactJS & NextJS",
+        level: "Advanced",
+        description: "Component Architecture, UI Design, Hooks, SSR",
+      },
+      {
+        name: "NodeJS & ExpressJS",
+        level: "Advanced",
+        description: "REST APIs, Auth Middleware, Server Operations",
+      },
+      {
+        name: "Django",
+        level: "Proficient",
+        description: "Python Full-Stack Web Development & ORM Services",
+      },
+      {
+        name: "MongoDB & MongoDB Atlas",
+        level: "Advanced",
+        description: "Document Storage, JSON Schemas, Aggregation Pipelines",
+      },
+      {
+        name: "MySQL & SQL Server",
+        level: "Proficient",
+        description: "Relational Schemas & Stored Procedures",
+      },
+    ],
+  },
+  {
+    id: "cloud-tools",
+    title: "Cloud & Tools",
+    skills: [
+      {
+        name: "AWS (S3, EC2)",
+        level: "Coursework Certified",
+        description: "Cloud Storage Bucket Integration & Virtual Instance Hosting",
+      },
+      {
+        name: "MinIO",
+        level: "Advanced",
+        description: "Self-Hosted S3-Compatible Encrypted Object Storage",
+      },
+      {
+        name: "Vercel & Render",
+        level: "Advanced",
+        description: "Multi-Service Deployment Pipelines for Full-Stack Apps",
+      },
+      {
+        name: "Git / GitHub",
+        level: "Advanced",
+        description: "Version Control, Feature Branching, Open Source",
+      },
+    ],
+  },
 ];

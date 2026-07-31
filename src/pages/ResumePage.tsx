@@ -28,7 +28,7 @@ export const ResumePage: React.FC = () => {
           </div>
           <div>
             <h3 className="text-lg font-bold text-slate-900 dark:text-white">Abhinav_Mishra_Resume.pdf</h3>
-            <p className="text-xs text-slate-600 dark:text-slate-400 font-medium">Verified March 2026 Edition</p>
+            <p className="text-xs text-slate-600 dark:text-slate-400 font-medium">Verified August 2026 Edition</p>
           </div>
         </div>
 
@@ -51,7 +51,7 @@ export const ResumePage: React.FC = () => {
             <div>
               <h1 className="text-3xl font-black text-slate-900 dark:text-white tracking-tight">{profileData.name}</h1>
               <p className="text-sm text-blue-600 dark:text-blue-400 font-bold mt-1">
-                (Aspiring Data Scientist, ML Engineer & MERN Developer)
+                Python Developer | AI/ML Engineer | Data Analyst
               </p>
             </div>
             <div className="text-xs text-slate-700 dark:text-slate-300 font-medium space-y-1 sm:text-right font-mono">
@@ -85,7 +85,7 @@ export const ResumePage: React.FC = () => {
         {/* Executive Summary */}
         <div className="space-y-2">
           <h2 className="text-xs font-bold text-blue-600 dark:text-blue-400 uppercase tracking-widest border-b border-blue-500/20 pb-1">
-            Executive Summary
+            Summary
           </h2>
           <p className="text-xs text-slate-700 dark:text-slate-300 font-medium leading-relaxed">
             {profileData.summary}
@@ -95,24 +95,28 @@ export const ResumePage: React.FC = () => {
         {/* Relevant Skills */}
         <div className="space-y-2">
           <h2 className="text-xs font-bold text-blue-600 dark:text-blue-400 uppercase tracking-widest border-b border-blue-500/20 pb-1">
-            Relevant Technical Skills
+            Skills
           </h2>
-          <p className="text-xs text-slate-800 dark:text-slate-200 leading-relaxed font-mono font-medium">
-            ReactJS, NodeJS, MongoDB, SQL, ExpressJS, NextJS, Data Science/Analysis, Machine Learning (PyTorch, Scikit-Learn, Keras, TensorFlow, OpenCV), MySQL, SQL Server, Django, Power BI & Tableau, Python.
-          </p>
+          <div className="text-xs text-slate-800 dark:text-slate-200 leading-relaxed font-mono font-medium space-y-1">
+            <div><strong>Programming:</strong> Python, JavaScript, SQL</div>
+            <div><strong>AI / Machine Learning:</strong> PyTorch, Scikit-learn, TensorFlow, Keras, OpenCV, Agentic AI workflows (n8n, Relevance, Relay)</div>
+            <div><strong>Data Analysis & Visualization:</strong> Pandas, NumPy, Power BI, Tableau</div>
+            <div><strong>Web Development:</strong> ReactJS, NodeJS, ExpressJS, NextJS, Django, MongoDB, MySQL, SQL Server</div>
+            <div><strong>Cloud & Tools:</strong> AWS (S3, EC2 — coursework certified), MinIO, Vercel, Render, Git/GitHub</div>
+          </div>
         </div>
 
         {/* Work Experience */}
         <div className="space-y-4">
           <h2 className="text-xs font-bold text-blue-600 dark:text-blue-400 uppercase tracking-widest border-b border-blue-500/20 pb-1">
-            Work Experience
+            Experience
           </h2>
           <div className="space-y-4">
             {experienceData.map((exp) => (
               <div key={exp.id} className="space-y-1.5">
                 <div className="flex flex-wrap justify-between text-xs font-bold text-slate-900 dark:text-white">
                   <span>{exp.role} — <span className="text-blue-600 dark:text-blue-400">{exp.company}</span></span>
-                  <span className="text-slate-600 dark:text-slate-400 font-mono font-medium">{exp.duration} ({exp.location})</span>
+                  <span className="text-slate-600 dark:text-slate-400 font-mono font-medium">{exp.duration}</span>
                 </div>
                 <ul className="list-disc list-inside text-xs text-slate-700 dark:text-slate-300 font-medium space-y-1">
                   {exp.description.map((d, i) => (
@@ -127,7 +131,7 @@ export const ResumePage: React.FC = () => {
         {/* Education */}
         <div className="space-y-4">
           <h2 className="text-xs font-bold text-blue-600 dark:text-blue-400 uppercase tracking-widest border-b border-blue-500/20 pb-1">
-            Educational Qualifications
+            Education
           </h2>
           <div className="space-y-3">
             {educationData.map((edu) => (
@@ -141,7 +145,7 @@ export const ResumePage: React.FC = () => {
           </div>
         </div>
 
-        {/* Key Certifications */}
+        {/* Courses & Certifications */}
         <div className="space-y-2">
           <h2 className="text-xs font-bold text-blue-600 dark:text-blue-400 uppercase tracking-widest border-b border-blue-500/20 pb-1">
             Courses & Certifications
@@ -149,7 +153,7 @@ export const ResumePage: React.FC = () => {
           <ul className="list-disc list-inside text-xs text-slate-700 dark:text-slate-300 font-medium space-y-1">
             {certificationsData.map((c) => (
               <li key={c.id}>
-                <strong>{c.title}</strong> — {c.provider} ({c.status})
+                <strong>{c.title}</strong> — {c.provider} {c.status ? `(${c.status})` : ''}
               </li>
             ))}
           </ul>
