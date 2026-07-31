@@ -3,7 +3,10 @@ export type ProjectCategory =
     | "Python"
     | "AI"
     | "Machine Learning"
-    | "Data Science";
+    | "Data Science"
+    | "React"
+    | "Backend"
+    | "Frontend";
 
 export interface Project {
     id: string;
