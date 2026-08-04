@@ -65,7 +65,7 @@ export const projectsData: Project[] = [
         shortDescription:
             "Interactive NLP analytics platform featuring feature engineering, behavioral insight extraction, and an 87% accuracy sentiment classification model trained on 78,000 lines of Hinglish sentences.",
         category: ["Python", "AI", "Data Science"],
-        featured: true,
+        featured: false,
         problemSolved:
             "Conversational textual exports contain valuable sentiment data and communication trends, but unstructured Hinglish text is difficult to parse using traditional NLP tools.",
         architectureOverview:
@@ -121,7 +121,7 @@ export const projectsData: Project[] = [
         shortDescription:
             "Backend-first JSON-driven content management system where the frontend renders pages dynamically from database-managed JSON configurations instead of hardcoded UI components.",
         category: ["MERN", "Backend"],
-        featured: true,
+        featured: false,
         problemSolved:
             "Traditional web applications require frontend code deployments whenever menus, buttons, navigation, forms, page titles, or content change. Funds24 eliminates this by storing UI configuration as structured JSON in MongoDB, allowing administrators to modify the application's interface without redeploying the frontend.",
         architectureOverview:
@@ -248,7 +248,7 @@ export const projectsData: Project[] = [
         shortDescription:
             "A machine learning project that compares multiple text classification algorithms to identify the best-performing sentiment analysis model using TF-IDF feature engineering and Scikit-learn pipelines.",
         category: ["Machine Learning", "NLP"],
-        featured: true,
+        featured: false,
         problemSolved:
             "Businesses and researchers often receive thousands of customer messages that cannot be manually analyzed efficiently. This project automates sentiment classification by training and evaluating multiple machine learning algorithms to accurately classify chat messages into sentiment categories.",
         architectureOverview:
@@ -328,7 +328,7 @@ export const projectsData: Project[] = [
         shortDescription:
             "Production Store & Product Management System engineered for the Admin Panel of a live web portal using React, Node.js, Express, and MongoDB.",
         category: ["MERN"],
-        featured: true,
+        featured: false,
         problemSolved:
             "E-commerce web portals require centralized, reliable administration tools to manage complex store inventories, product catalogs, and JSON content structures without code redeployment.",
         architectureOverview:
@@ -383,7 +383,7 @@ export const projectsData: Project[] = [
         shortDescription:
             "A full-stack ERP Management System built with React, Node.js, Express, and MongoDB featuring secure authentication, role-based access control, dashboard analytics, reusable data management components, and RESTful APIs.",
         category: ["MERN", "Full Stack"],
-        featured: true,
+        featured: false,
         problemSolved:
             "Organizations often manage operational data using multiple disconnected tools, resulting in duplicated work and inconsistent information. This ERP system centralizes authentication, user management, dashboards, and business operations into a unified web application with secure access control.",
         architectureOverview:
@@ -547,7 +547,7 @@ export const projectsData: Project[] = [
         shortDescription:
             "A modern, responsive React-based financial services landing website designed to establish trust, showcase services, and convert visitors into potential clients through an engaging user experience.",
         category: ["React", "Frontend", "MERN"],
-        featured: true,
+        featured: false,
         problemSolved:
             "Financial service providers often struggle with outdated websites that fail to communicate trust, explain services clearly, or convert visitors into customers. MyFunds addresses this through a responsive, high-performance landing experience with clear service presentation and intuitive navigation.",
         architectureOverview:
@@ -670,6 +670,61 @@ export const projectsData: Project[] = [
         ],
         futureImprovements: [
             "Deploy predictive API service using FastAPI and Docker",
+        ],
+    },
+    {
+        id: "add-gpt",
+        title: "AddGPT — AI-Powered Conversational Workflow & Agentic Assistant",
+        slug: "add-gpt",
+        shortDescription:
+            "Interactive LLM-powered assistant platform and workflow tool engineered with Python, OpenAI/LLM APIs, and custom prompt routing for automated task execution and contextual intelligence.",
+        category: ["AI", "Python"],
+        featured: true,
+        problemSolved:
+            "Context switching between browser tasks, manual document analysis, and raw AI chat interfaces leads to fragmented productivity and repetitive manual prompt construction.",
+        architectureOverview:
+            "Modular Python and JavaScript architecture leveraging OpenAI API / LLM orchestrators, custom prompt engineering pipelines, and asynchronous API connectors. Processes user context, injects domain memory, and streams structured AI responses.",
+        features: [
+            "Built and deployed custom GPT integration for contextual task automation and intelligent prompt processing",
+            "Designed lightweight client-server architecture with streaming response handlers",
+            "Implemented custom prompt templates and domain-specific context injection mechanisms",
+            "Integrated structured JSON schema validation for deterministic model outputs and tool calling",
+            "Optimized token usage and latency through response caching and prompt compression",
+        ],
+        technologies: [
+            "Python",
+            "OpenAI API",
+            "GPT Models",
+            "Agentic AI",
+            "JavaScript",
+            "REST APIs",
+            "Prompt Engineering",
+            "JSON Schema",
+        ],
+        githubUrl: "https://github.com/AbhadiMishra",
+        overview:
+            "AddGPT is an intelligent conversational AI assistant platform built to streamline user workflows by injecting custom GPT capabilities into daily engineering and content tasks. It bridges raw LLMs with practical automation tools.",
+        workflow: [
+            "1. Client application captures user prompt payload along with active domain context",
+            "2. Python backend preprocessing engine validates schema and constructs enriched prompt instructions",
+            "3. Request is dispatched to GPT foundation models via optimized API streaming pipelines",
+            "4. Structured response or function-calling action is returned to the user interface in real-time",
+        ],
+        challenges: [
+            "Managing latency and token limit constraints when processing large contextual inputs",
+            "Preventing model hallucination when generating structured data or code output",
+        ],
+        solutions: [
+            "Engineered dynamic context truncation and sliding window token buffer management",
+            "Enforced strict System Prompt guardrails and Pydantic/JSON schema response validation",
+        ],
+        lessonsLearned: [
+            "Systematic prompt engineering combined with strict output parsing turns probabilistic LLMs into reliable software primitives",
+            "Asynchronous streaming response handlers are essential for maintaining user-perceived UI responsiveness",
+        ],
+        futureImprovements: [
+            "Integrate RAG (Retrieval-Augmented Generation) pipeline using vector embeddings (ChromaDB / Pinecone)",
+            "Develop a native browser extension wrapper for seamless one-click web context capturing",
         ],
     },
 ];
